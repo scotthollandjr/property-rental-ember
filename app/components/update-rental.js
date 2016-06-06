@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   actions: {
     updateRentalForm() {
       this.set('updateRentalForm', true);
-    }
+    },
     update(rental) {
       var params = {
         owner: this.get('owner'),
@@ -15,11 +15,6 @@ export default Ember.Component.extend({
         bedrooms: this.get('bedrooms'),
       };
       this.set('updateRentalForm', false);
-      this.set('owner', "");
-      this.set('city', "");
-      this.set('type', "");
-      this.set('image', "");
-      this.set('bedrooms', "");
       this.sendAction('update', rental, params);
     }
   }
